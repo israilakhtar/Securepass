@@ -1,0 +1,46 @@
+:root[data-theme="dark"] {
+  --bg: #0b1220; --card: #131c2e; --text: #e5e9f0; --muted: #8b97ad; --border: #23304a; --accent: #22d3ee;
+}
+:root[data-theme="light"] {
+  --bg: #f3f6fb; --card: #ffffff; --text: #111827; --muted: #5b6678; --border: #dbe2ee; --accent: #0891b2;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  transition: background 0.2s, color 0.2s;
+}
+.app { max-width: 860px; margin: 0 auto; padding: 16px; }
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 8px 0 16px; }
+.nav h1 { margin: 0; font-size: 1.4rem; }
+main { display: grid; gap: 16px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+.card h2, .card h3 { margin-top: 0; }
+.muted { color: var(--muted); }
+.small { font-size: 0.85rem; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+input {
+  flex: 1; min-width: 200px; padding: 12px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 1rem;
+}
+button {
+  padding: 12px 18px; border: 0; border-radius: 10px; cursor: pointer;
+  background: var(--accent); color: #04121a; font-weight: 600;
+}
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+button.ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.error { color: #ef4444; }
+.warn { color: #f59e0b; }
+.result { margin-top: 16px; }
+.badge { padding: 12px; border-radius: 10px; font-weight: 600; }
+.badge.bad { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+.badge.good { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+.meter { display: flex; gap: 6px; margin: 14px 0; }
+.meter span { flex: 1; height: 8px; border-radius: 4px; background: var(--border); transition: background 0.3s; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.stat { text-align: center; padding: 16px; }
+.stat b { display: block; font-size: 1.6rem; color: var(--accent); }
+.stat span { color: var(--muted); font-size: 0.85rem; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+@media (max-width: 520px) { .row button { flex: 1; } }
